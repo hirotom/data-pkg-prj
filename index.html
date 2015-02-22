@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mtcars data analysis tool</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mtcars data analysis tool">
+  <meta name="author" content="Hiroto Miyake">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>mtcars data analysis tool</h1>
+    <h2>Reproducible Pitch Presentation</h2>
+    <p>Hiroto Miyake<br/>Developing Data Products class project (Feb. 2015)</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h3>Introduction</h3>
+  </hgroup>
+  <article data-timings="">
+    <h5>This presentation describes a Shiny app developed to help analyze the <code>mtcars</code> dataset in R.</h5>
+
+<p>The app first loads the mtcars</p>
+
+<pre><code class="r">data(mtcars)
+</code></pre>
+
+<p>The app has 4 tabs to allow users to:</p>
+
+<ol>
+<li>Perform simple exploratory analysis</li>
+<li>Simulate MPG with a few parameters</li>
+<li>View and download the mtcars raw dataset</li>
+<li>View descriptions about the dataset</li>
+</ol>
+
+<p>The Shiny app is available at: <a href="http://hmiyake.shinyapps.io/data-pkg-prj/">http://hmiyake.shinyapps.io/data-pkg-prj/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Exploratory Analysis</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><code>Exploratory</code> tab allows users to make x-y plot on the fly by specifying the variables for each of the axis, along with the ability to specify variables to group by color and bubble size.</p>
+
+<p>The available variables are shown below</p>
+
+<pre><code class="r">colnames(mtcars)
+</code></pre>
+
+<pre><code>##  [1] &quot;mpg&quot;  &quot;cyl&quot;  &quot;disp&quot; &quot;hp&quot;   &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot; &quot;vs&quot;   &quot;am&quot;   &quot;gear&quot;
+## [11] &quot;carb&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h3>Simulate MPG</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><code>Simulate MPG</code> tab allows users to specify predictor variables using widgets on the left panel.  A multivariable regression model was used to predict mpg from 4 of the predictor variables (cyl, wt, am, and hp).  The 4 variables were selected following regression model refinement prior to this deployment of Shiny app.</p>
+
+<p>The main panel describes the model, and result, and the detailed contributions from each of the parameters the users have selected.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h3>Raw Data</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><code>Raw Data</code> tab allows users to view and download the raw data.</p>
+
+<p>The download button on the left panel allows users to download the raw data in CSV format.</p>
+
+<p>The main panel allows users view the data, along with option to filter the data by each of the columns at the bottom.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Exploratory Analysis'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Simulate MPG'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Raw Data'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
